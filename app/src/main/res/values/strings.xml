@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TextToSpeech</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="read_your_pdf_using_text_to_speech">Read your PDF using Text to Speech</string>
+    <string name="click_to_select_a_pdf">Click to Select a PDF</string>
+    <string name="the_picked_book">The picked book is</string>
+</resources>
