@@ -43,10 +43,14 @@ class ReadAndListenFragment : Fragment() {
 
     private fun subscribeUi() {
         observe(binding.prePage) {
+            readAndListenViewModel.updateStopIndex(0)
+            pause()
             readAndListenViewModel.prevPage(pdfReader)
             binding.pageContent.text = readAndListenViewModel.currentPageText
         }
         observe(binding.nextPage){
+            readAndListenViewModel.updateStopIndex(0)
+            pause()
             readAndListenViewModel.nextPage(pdfReader)
             binding.pageContent.text = readAndListenViewModel.currentPageText
 
