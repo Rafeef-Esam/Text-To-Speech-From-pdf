@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.texttospeech.ui.readAndListen.viewModel.ReadAndListenViewModel" />
@@ -12,31 +13,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/mint_green"
+        android:orientation="vertical"
         android:paddingHorizontal="20dp"
         android:paddingTop="20dp"
         android:paddingBottom="10dp"
-        android:orientation="vertical"
-        android:background="@color/mint_green"
         tools:context=".ui.readAndListen.view.ReadAndListenFragment">
 
         <ImageView
             android:id="@+id/back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/baseline_keyboard_backspace_24"/>
-        
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:src="@drawable/baseline_keyboard_backspace_24" />
 
         <TextView
             android:id="@+id/pageContent"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:textSize="20sp"
-            android:text="" />
-        </ScrollView>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:text=""
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,25 +45,25 @@
                 android:id="@+id/prePage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/baseline_arrow_left_24"/>
+                android:src="@drawable/baseline_arrow_left_24" />
 
             <TextView
                 android:id="@+id/pageNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text='@{viewModel.currentPage + " / " + viewModel.pageNumbers}'/>
+                android:text='@{viewModel.currentPage + " / " + viewModel.pageNumbers}'
+                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/nextPage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/baseline_arrow_right_24"/>
+                android:src="@drawable/baseline_arrow_right_24" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/play_or_pause"

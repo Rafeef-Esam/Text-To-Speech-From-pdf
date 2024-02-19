@@ -3,6 +3,7 @@ package com.example.texttospeech.ui.readAndListen.view
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.method.ScrollingMovementMethod
 import android.text.style.RelativeSizeSpan
 import android.view.LayoutInflater
 import android.view.View
@@ -81,6 +82,7 @@ class ReadAndListenFragment : Fragment() {
         binding.lifecycleOwner = this
         readAndListenViewModel = ViewModelProvider(this)[ReadAndListenViewModel::class.java]
         binding.viewModel = readAndListenViewModel
+        binding.pageContent.movementMethod = ScrollingMovementMethod()
         pdfReader = PdfReader(requireActivity().contentResolver.openInputStream(args.attachment.attachmentUri ?: "".toUri()))
         readAndListenViewModel.pageNumbers = pdfReader.numberOfPages
         val currentText = PdfTextExtractor.getTextFromPage(pdfReader, readAndListenViewModel.currentPage.value ?: 1).trim()

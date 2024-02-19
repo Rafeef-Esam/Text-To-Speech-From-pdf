@@ -39,7 +39,7 @@ class ReadAndListenViewModel : ViewModel() {
     }
 
     fun nextPage(pdfReader: PdfReader) {
-        if (currentPage.value!! < pageNumbers) {
+        if ((currentPage.value ?: 0) < pageNumbers) {
             _currentPage.value = _currentPage.value?.plus(1)
             setPageContent(pdfReader)
             updateIsPaused(false)
